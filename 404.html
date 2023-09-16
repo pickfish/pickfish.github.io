@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BlockJs</title>
+</head>
+
+<script>
+    let url="https://github.com/cinast/blockJs";
+    function full(){
+        if (window.location.href.startsWith('https://pickfish.github.io/')) {
+            var newPath = window.location.href.replace('https://pickfish.github.io/', url);
+            document.getElementById('a').innerHTML = '<style>.line {display: inline-block;width: 15px;height: 15px;border-radius: 15px;background-color: #fec433;margin-left: 10px;vertical-align: baseline;}</style><div id="placehoder_loading"><div class="loading_container"><div class="load-3">loading<div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>';
+            window.location.href=newPath;
+        }else{
+            document.getElementById('a').innerHTML = '<style>.line {display: inline-block;width: 15px;height: 15px;border-radius: 15px;background-color: #fec433;margin-left: 10px;vertical-align: baseline;}</style><div id="placehoder_loading"><div class="loading_container" ><div class="load-3" style="color:red!important">error<div class="line"style="background-color:red"></div><div class="line"style="background-color:red"></div><div class="line" style="background-color:red"></div></div></div></div><p>Reason : protect1-1(Couldn\'t jump success when the page is in the edit mode)</p>';
+        }
+    }
+</script>
+
+<style>
+    * {text-align:center}
+    button {border:0;background-color:rgb(129,216,208);width:200px;height:61.8px;border-radius:11px;font-size:150%}
+    button:hover {border:black solid 1px}
+    .line{display:inline-block;width:15px;height:15px;border-radius:15px;background-color:#fec433;margin-left:10px;vertical-align:baseline}.load-3 .line:nth-last-child(1){animation:loadingC .6s .1s linear infinite}.load-3 .line:nth-last-child(2){animation:loadingC .6s .2s linear infinite}.load-3 .line:nth-last-child(3){animation:loadingC .6s .3s linear infinite}@keyframes loadingC{0%{transform:translate(0,0)}50%{transform:translate(0,10px)}100%{transform:translate(0,0)}}.loading_container{width:100%;height:500px;padding-top:15%;font-size:50px;text-align:center;color:#fec433;font-weight:600}
+
+</style>
+
+<body onload="full();" id="a">
+    <h1>PICKFISH is updated to BlockJs</h1>
+    <h2>If the page is not jump successful, please click the button:</h2>
+    <button onclick="full();">GO!</button>
+</body>
+
+</html>
